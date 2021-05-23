@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import kodlamaio.hrms.business.abstracts.JobPositionService;
 import kodlamaio.hrms.dataAccess.abstracts.JobPositionDao;
@@ -27,9 +28,9 @@ public class JobPositionManager implements JobPositionService {
 	}
 
 	@Override
-	public JobPosition GetById(int id) {
+	public JobPosition GetById( int id) {
 		
-		return dao.getById(id);
+		return dao.findById(id).get();
 	}
 
 }
